@@ -1,0 +1,23 @@
+{
+  "name": "cars-web-dev-test",
+  "version": "1.0.0",
+  "description": "backend api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwmbutler/cars-test.git"
+  },
+  "author": "Nick Butler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nwmbutler/cars-test/issues"
+  },
+  "homepage": "https://github.com/nwmbutler/cars-test#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

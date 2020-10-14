@@ -1,13 +1,5 @@
 # Cars Web Dev Test
 
-# Cars API
-
-Please create a new git repo (don't fork this one) and follow the instructions below.
-
-Once you have finished, please email us the URL to your repo.
-
-Please make commits as you go (> 1 and < 100) and provide instructions to run the application.
-
 ## The Story
 
 "As a consumer of a RESTFul API, I would like to be able to add, retrieve, and remove *cars*."
