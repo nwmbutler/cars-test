@@ -1,4 +1,6 @@
 # Cars Web Dev Test
+ *  example post  $ curl -d "id=5&make=VW&model=Lupo&colour=green&year=2002" http://localhost:3000/api/cars
+ * example delete $ curl -X delete "http://localhost:3000/api/cars/5
 
 ## The Story
 
