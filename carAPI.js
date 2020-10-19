@@ -1,42 +1,30 @@
-const express = require('express')
-const bodyParser = require('body-parser');
-const router = express.Router()
-const cors = require('cors');
 
-const app = express();
-const PORT = 3000;
+const { Router } = require('express')
+const router = new Router()
 
-app.use(cors());
+const cars = require('./cars.json')
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-    res.send('Cars API');
+router.get('/', (req, res) => {
+    res.json(cars);
 });
 
-app.get('/cars', (req, res) => {
-    return res.send(Object.values(cars));
-});
-
-app.post('/cars', (req, res) => {
-    let newCar = req.body
+router.post('/', (req, res) => {
+    const newCar = req.body
     cars.push(newCar)
     console.log(req.body)
 });
 
-  app.delete('/cars/:id', (req, res) => {
+  router.delete('/:id', (req, res) => {
     const { id } = req.body
     console.log(id)
     if (id) {
-        cars.forEach((car, index) => {
-            if (car.id === id) {
-                cars.splice(index, 1)
+        forEach((car, index) => {
+            if (car.id == id) {
+                splice(index, 1)
             }
         })
         res.json(cars)
     }
 })
 
-
-app.listen(PORT, () => console.log(`Hello world app listening on port ${PORT}!`));
+module.exports = router
