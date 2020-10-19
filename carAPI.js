@@ -6,23 +6,6 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
-let cars = [
-   { 
-    id: 1,
-    make: "Fiat", 
-    model: "Punto",
-    colour: "yellow",
-    year: "1998",
-    },
-    { 
-    id: 2,
-    make: "Ford", 
-    model: "Focus",
-    colour: "silver",
-    year: "2007",
-    },
-];
-
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
