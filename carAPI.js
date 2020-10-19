@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newCar = req.body
     cars.push(newCar)
-    console.log(req.body)
+    
 });
 
   router.delete('/:id', (req, res) => {
