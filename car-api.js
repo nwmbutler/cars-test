@@ -8,12 +8,14 @@ const PORT = 3000;
 
 let cars = [
    { 
+    id: 1,
     make: "Fiat", 
     model: "Punto",
     colour: "yellow",
     year: "1998",
     },
     { 
+    id: 2,
     make: "Ford", 
     model: "Focus",
     colour: "silver",
@@ -40,10 +42,18 @@ app.post('/cars', (req, res) => {
     console.log(req.body)
 });
 
-app.post('/cars', (req, res) => {
-    let newCar = req.body
-    cars.push(newCar)
-    console.log(req.body)
-});
+  app.delete('/cars/:id', (req, res) => {
+    const { id } = req.body
+    console.log(id)
+    if (id) {
+        cars.forEach((car, index) => {
+            if (car.id === id) {
+                cars.splice(index, 1)
+            }
+        })
+        res.json(cars)
+    }
+})
+
 
 app.listen(PORT, () => console.log(`Hello world app listening on port ${PORT}!`));
