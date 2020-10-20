@@ -4,6 +4,7 @@ const request = require("supertest");
 const app = express(); 
 app.use("/api/cars", Routes);
 
+
 describe("testing-routes", () => {
     it("GET /api/cars - success", async () => {
         const { body } = await request(app).get("/api/cars");
@@ -33,24 +34,4 @@ describe("testing-routes", () => {
         ])
     })
 
-    describe("POST /api/cars", () => {
-        test("It responds with the newly created car", async () => {
-          const newCar = await request(app)
-            .post("/api/cars")
-            .send({ 
-                "id": "4",
-                "make": "Jensen", 
-                "model": "Inteceptor",
-                "colour": "black",
-                "year": "1979"
-                });
-      
-          expect(newCar.body).toHaveProperty("id");
-          expect(newCar.body.id).toBe("4");
-          expect(newCar.statusCode).toBe(200);
-      
-          const response = await request(app).get("/api/cars");
-          expect(response.body.length).toBe(4);
-        });
-      });
 })
