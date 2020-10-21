@@ -10,17 +10,16 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const newCar = req.body
-    cars.push(newCar)
-    return cars
+    cars.push(newCar);
+    res.json(cars);
 });
 
-  router.delete('/:id', (req, res) => {
-    const { id } = req.body
-    console.log(id)
+router.delete('/:id', (req, res) => {
+    const { id } = req.params
     if (id) {
-        forEach((car, index) => {
+        cars.forEach((car, index) => {
             if (car.id == id) {
-                splice(index, 1)
+                cars.splice(index, 1)
             }
         })
         res.json(cars)
